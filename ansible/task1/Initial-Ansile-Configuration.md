@@ -12,9 +12,9 @@
 
 1. **Install Ansible** on control node:
    
-   ```bash
-   sudo apt install ansible   # or yum/dnf depending on your OS
-   ```
+```bash
+sudo apt install ansible   # or yum/dnf depending on your OS
+```
 
 2. **Generate SSH Key** on control node:
 
