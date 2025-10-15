@@ -33,7 +33,7 @@
 
 - Verifies installation
 
-- **Tasks**: `roles/docker/tasks/main.yml`
+- **Tasks**: `roles/docker/tasks/main.ymal`
 
 ### 2. kubectl Role
 
@@ -45,7 +45,7 @@
 
 - Verifies installation
 
-- **Tasks**: `roles/kubectl/tasks/main.yml`
+- **Tasks**: `roles/kubectl/tasks/main.ymal`
 
 ### 3. Jenkins Role
 

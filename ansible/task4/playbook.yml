@@ -1,0 +1,36 @@
+---
+- hosts: all
+  become: yes
+  vars_files:
+    - vault.yaml   # Contains db_user and db_password
+
+  tasks:
+    - name: Install MySQL server
+      apt:
+        name: mysql-server
+        state: present
+        update_cache: yes
+
+    - name: Start and enable MySQL service
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: Create iVolve database
+      community.mysql.mysql_db:
+        name: iVolve
+        state: present
+        # Use Unix socket authentication for root
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
+    - name: Create MySQL user
+      community.mysql.mysql_user:
+        name: "{{ vault_db_user }}"
+        password: "{{ vault_db_password }}"
+        priv: "iVolve.*:ALL"
+        state: present
+        host: localhost
+        # Use Unix socket instead of password for root login
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+
