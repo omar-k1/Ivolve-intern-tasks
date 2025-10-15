@@ -63,10 +63,8 @@ curl http://managed_node_ip
 - Check that no other web server is running to avoid conflicts.
 
 - ### Additional Notes:
-  
-  1. **Separate HTML File**
-     
-     - Instead of writing the HTML separated in file and pass it in the playbook using `copy`  module , you can but all in the playbook instead of that . 
+   
+- Instead of writing the HTML separated in file and pass it in the playbook using `copy`  module , you can but all in the playbook instead of that . 
 
 
                    
